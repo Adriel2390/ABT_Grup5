@@ -22,11 +22,17 @@ def facturacio():
 
 def mostrar():
     arxiu_csv = "dades_botiga.csv"
+    dades = []
     with open(arxiu_csv, newline='', encoding='utf-8') as arxiu:
         lector_csv = csv.DictReader(arxiu)
         for i in lector_csv:
-            print("Estoc_Disponible")
             print(i["Producte"], i["Estoc_Disponible"])
+    
+        for i in range(1, len(dades)):
+            for j in range(len(dades[0])):
+                print(dades[0][j] + ": " + dades[i][j])
+            print("")
+
 
 def menu():
     while True:
@@ -40,7 +46,7 @@ def menu():
 
         opcio = int(input("tria una opció de 1 al 4: "))
         if opcio == 1: facturacio()
-        elif opcio == 2: print
+        elif opcio == 2: mostrar()
         elif opcio == 3: print
         elif opcio == 4: break
         else: print("\nOpció no vàlida. Torna-ho a intentar.\n")
