@@ -20,6 +20,14 @@ def facturacio():
     print(f"La facturació sense IVA és: {Factuacio_senseIVA:.2f}€")
     print(f"La facturació amb IVA és: {Factuacio_ambIVA:.2f}€")
 
+def mostrar():
+    arxiu_csv = "dades_botiga.csv"
+    with open(arxiu_csv, newline='', encoding='utf-8') as arxiu:
+        lector_csv = csv.DictReader(arxiu)
+        for i in lector_csv:
+            print("Estoc_Disponible")
+            print(i["Producte"], i["Estoc_Disponible"])
+
 def menu():
     while True:
         print("\n ___________________________________________________________________")
