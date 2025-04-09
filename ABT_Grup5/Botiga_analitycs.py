@@ -1,5 +1,13 @@
 import csv
 
+def llegir_csv(arxiu_csv):
+    dades = []
+    with open(arxiu_csv, newline='', encoding='utf-8') as arxiu:
+        lector_csv = csv.DictReader(arxiu)
+        for l in lector_csv:
+            dades.append(l)
+    return dades
+
 def facturacio():
     Factuacio_senseIVA = 0
     Factuacio_ambIVA = 0
