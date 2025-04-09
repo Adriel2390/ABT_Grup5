@@ -26,13 +26,10 @@ def mostrar():
     with open(arxiu_csv, newline='', encoding='utf-8') as arxiu:
         lector_csv = csv.DictReader(arxiu)
         for i in lector_csv:
-            print(i["Producte"], i["Estoc_Disponible"])
-    
-        for i in range(1, len(dades)):
-            for j in range(len(dades[0])):
-                print(dades[0][j] + ": " + dades[i][j])
-            print("")
-
+            dades.append({"Producte": i["Producte"], "Estoc_Disponible": i["Estoc_Disponible"]})
+        for i in dades:
+            print(f"Producte: {i['Producte']}")
+            print(f"Estoc_Disponible: {i['Estoc_Disponible']}\n")
 
 def menu():
     while True:
